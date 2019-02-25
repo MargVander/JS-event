@@ -49,20 +49,22 @@ navBar.addEventListener("dblclick", function() {
 
 
 // "Exercice 6"
+
 for (var x = 0; x < 6; x++) {
+  let parentCard = document.getElementsByClassName("card")[x]
   let reduceCardBtn = document.getElementsByClassName("btn-success")[x]
-  let reduceCard = document.getElementsByClassName("card")[x]
+  let reduceCard = document.getElementsByClassName("card-img-top")[x]
   let reduceStatus = false
   reduceCardBtn.addEventListener("mouseover", function() {
     if (reduceStatus === false) {
       reduceCard.style.height = "20%"
       reduceCard.style.width = "20%"
-      reduceCard.getElementsByTagName("p")[0].classList.add("collapse");
+      parentCard.getElementsByTagName("p")[0].classList.add("collapse");
       reduceStatus = true
     }else {
       reduceCard.style.height = ""
       reduceCard.style.width = ""
-      reduceCard.getElementsByTagName("p")[0].classList.remove("collapse")
+      parentCard.getElementsByTagName("p")[0].classList.remove("collapse")
       reduceStatus = false
     }
   });
